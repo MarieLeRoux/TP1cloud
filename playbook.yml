@@ -1,1 +1,34 @@
 ---
+
+- name: 'Installation et configuration de golang-myip'
+  hosts: default
+  become: true
+
+  tasks:
+    - name: installation de go
+      dnf:
+        name: go
+        state: latest
+
+    - name: installation de make
+      dnf:
+        name: make
+        state: latest
+
+    - name: installation de git
+      dnf:
+        name: git
+        state: latest
+
+    - name: copie du repo git
+      git:
+        repo: https://github.com/BastienBalaud/golang-myip.git
+        dest: /tmp/golang-myip/
+        clone: yes
+        update: yes
+
+    - name: compilation
+      shell: make
+      args:
+        chdir: /tmp/golang-myip/
+

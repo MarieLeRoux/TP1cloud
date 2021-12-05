@@ -24,4 +24,10 @@ source "qemu" "example" {
 
 build {
   sources = ["source.qemu.example"]
+  
+  #ajout du provisioner ansible
+  provisioner "ansible" {
+    playbook_file = "./playbook.yml"
+    user = "root"
+  }
 }
