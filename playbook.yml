@@ -32,3 +32,27 @@
       args:
         chdir: /tmp/golang-myip/
 
+    - name: creation du fichier init
+      file:
+        path: /etc/systemd/system/myip.service
+        state: touch
+
+    - name: ajout du contenu du fichier
+      blockinfile:
+        path: /etc/systemd/system/myip.service
+        block: |
+          [Unit]
+          Description=Je suis un joli service qui te donne ton IP
+          [Service]
+          Type=simple
+          ExecStart=/opt/golang-myip/build/server.x86_64 --port 80
+          ExecReload=/opt/golang-myip/build/server.x86_64 --port 80
+          [Install]
+          WantedBy=multi-user.target
+
+    - name: demarrage du service myip + enabled
+      service:
+        name: myip
+        state: started
+        enabled: yes
+
