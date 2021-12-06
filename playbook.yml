@@ -56,3 +56,18 @@
         state: started
         enabled: yes
 
+    #- name: désactivation de selinux
+      #shell: setenforce 0
+
+    # - name: verification de l'etat du service myip
+      # shell: systemctl status myip
+
+    - name: requete http
+      uri:
+        url: http://127.0.0.1:80
+
+    #- name: pause pour test 
+     # wait_for:
+       # timeout: 300 
+      #delegate_to: localhost
+
