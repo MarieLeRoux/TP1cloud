@@ -1,10 +1,10 @@
-#TP1cloud
+# TP1cloud
 
 Automatisation du déploiement de golang-myip (https://github.com/BastienBalaud/golang-myip) avec Packer et Ansible sur des VM Rocky 8.
 
 ********************************
 
-##Installation d'Ansible sur Rocky 8
+## Installation d'Ansible sur Rocky 8
 
 **toutes les commandes sont effectuées en root**
 
@@ -21,14 +21,14 @@ source : https://www.linuxtechi.com/how-to-install-ansible-on-rocky-linux/
 
 ********************************
 
-##Utilisation de Packer
+## Utilisation de Packer
 
 packer build <nom du fichier>
 dans notre cas: packer build packer.pkr.hcl
 
 *********************************
 
-##Description du playbook
+## Description du playbook
 
 sources :
 https://linuxconfig.org/how-to-create-systemd-service-unit-in-linux
