@@ -23,14 +23,14 @@
     - name: copie du repo git
       git:
         repo: https://github.com/BastienBalaud/golang-myip.git
-        dest: /tmp/golang-myip/
+        dest: /opt/golang-myip/
         clone: yes
         update: yes
 
     - name: compilation
       shell: make
       args:
-        chdir: /tmp/golang-myip/
+        chdir: /opt/golang-myip/
 
     - name: creation du fichier init
       file:
@@ -59,8 +59,8 @@
     #- name: désactivation de selinux
       #shell: setenforce 0
 
-    # - name: verification de l'etat du service myip
-      # shell: systemctl status myip
+     - name: verification de l'etat du service myip
+       shell: systemctl status myip
 
     - name: requete http
       uri:
