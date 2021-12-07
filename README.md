@@ -17,8 +17,6 @@ dnf install ansible -y
 
 ansible --version
 
-source : https://www.linuxtechi.com/how-to-install-ansible-on-rocky-linux/
-
 ********************************
 
 ## Utilisation de Packer
@@ -30,9 +28,27 @@ dans notre cas: packer build packer.pkr.hcl
 
 ## Description du playbook
 
-sources :
+*********************************
+
+## Sources :
+
+**Modules Ansible**
+https://docs.ansible.com/ansible/latest/collections/ansible/builtin/file_module.html
+https://docs.ansible.com/ansible/latest/collections/ansible/builtin/blockinfile_module.html
+https://docs.ansible.com/ansible/latest/collections/ansible/builtin/uri_module.html
+https://docs.ansible.com/ansible/latest/collections/ansible/builtin/service_module.html
+https://docs.ansible.com/ansible/latest/collections/ansible/builtin/shell_module.html
+
+**Création d'un service**
 https://linuxconfig.org/how-to-create-systemd-service-unit-in-linux
 https://www.linuxtricks.fr/wiki/systemd-les-commandes-essentielles
 https://ostechnix.com/check-runlevel-linux/
-https://docs.ansible.com/ansible/latest/collections/ansible/builtin/file_module.html
-https://docs.ansible.com/ansible/latest/collections/ansible/builtin/blockinfile_module.html
+
+**Manipulation fichier kickstart**
+https://www.golinuxcloud.com/rhel-centos-8-kickstart-example-generator/
+
+**Ajout des clés SSH**
+https://linuxize.com/post/curl-command-examples/
+
+**Installation Ansible**
+https://www.linuxtechi.com/how-to-install-ansible-on-rocky-linux/
