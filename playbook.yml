@@ -22,6 +22,18 @@
         path: ~/tampon.txt
         state: absent
 
+    - name: suppression de l'authentification ssh par mdp 1
+      lineinfile:
+        path: /etc/ssh/sshd_config
+        regexp: '^PasswordAuthentication yes'
+        line: PasswordAuthentication no
+
+    - name: suppression de l'authentification ssh par mdp 2
+      lineinfile:
+        path: /etc/ssh/sshd_config
+        regexp: '^#PubkeyAuthentication yes'
+        line: PubkeyAuthentication yes  
+
     - name: installation de go
       dnf:
         name: go
@@ -73,13 +85,4 @@
         state: started
         enabled: yes
 
-    - name: vérification du service myip
-      shell: systemctl status myip 
-
-    - name: verification de l'etat du service myip
-      shell: systemctl status myip
-
-    - name: requete http
-      uri:
-        url: http://127.0.0.1:80
 

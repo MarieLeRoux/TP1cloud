@@ -30,4 +30,19 @@ build {
     playbook_file = "./playbook.yml"
     user = "root"
   }
+
+  # check du service myip
+  #provisioner "shell"{
+    #inline = ["curl http://127.0.0.1"]
+  #}
+
+  # vérification du contenu du fichier authorized_keys
+  #provisioner "shell"{
+    #inline = ["cat ~/.ssh/authorized_keys"]
+  #}
+
+  # vérification de l'application des modifs sur la conf ssh
+  #provisioner "shell"{
+    #inline = ["cat /etc/ssh/sshd_config"]
+  #}
 }
