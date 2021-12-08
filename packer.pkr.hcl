@@ -45,4 +45,8 @@ build {
   #provisioner "shell"{
     #inline = ["cat /etc/ssh/sshd_config"]
   #}
+
+  #provisioner "shell"{
+    #inline = ["systemctl status myip"]
+  #}
 }
